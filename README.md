@@ -21,19 +21,19 @@ This serverless function helps you find the capital by providing the country nam
 #### Find the Capital by Country
 
 - **Endpoint:** `/api/capital-finder?country={country_name}`
-- **Example:** [https://stephs-capital-finder.vercel.app/api/capital-finder?country=Chile](https://stephs-capital-finder.vercel.app/api/capital-finder?country=Chile)
+- **Example:** [https://stephs-capital-finder.vercel.app/api/capital-finder?country=Chile](https://stephs-capital-finder.vercel.app/api?country=Chile)
 - **Response:** `The capital of Chile is Santiago`
 
 #### Find the Country by Capital
 
 - **Endpoint:** `/api/capital-finder?capital={capital_name}`
-- **Example:** [https://stephs-capital-finder.vercel.app/api/capital-finder?capital=Santiago](https://stephs-capital-finder.vercel.app/api/capital-finder?capital=Santiago)
+- **Example:** [https://stephs-capital-finder.vercel.app/api/capital-finder?capital=Santiago](https://stephs-capital-finder.vercel.app/api?capital=Santiago)
 - **Response:** `Santiago is the capital of Chile`
 
 ### Deployed URLs
 
 - **Vercel App:** [https://stephs-capital-finder.vercel.app/](https://stephs-capital-finder.vercel.app/)
-- **Capital Finder API:** [https://stephs-capital-finder.vercel.app/api/capital-finder](https://stephs-capital-finder.vercel.app/api/capital-finder)
+- **Capital Finder API:** [https://stephs-capital-finder.vercel.app/api/capital-finder](https://stephs-capital-finder.vercel.app/api)
 
 ### Virtual Environment Setup
 
