@@ -21,11 +21,11 @@ class handler(BaseHTTPRequestHandler):
                 'statusCode': 400,
                 'body': 'Invalid query parameters'
             }
-
-        self.send_response(response['statusCode'])
+        message = 'Coming soon'
+        self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        self.wfile.write(response['body'].encode('utf-8'))
+        self.wfile.write(message.encode('utf-8'))
         return
 
 
