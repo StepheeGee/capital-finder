@@ -14,14 +14,24 @@ class handler(BaseHTTPRequestHandler):
         # Choose the appropriate handler based on the presence of 'country' or 'capital'
         if 'country' in dic:
             response = requests.get(f'https://restcountries.com/v3.1/name/{dic["country"]}?fields=name,capital')
+            country_list = response.json()
+            country_obj = country_list[0]
+            capital = country_obj['capital'][0]
+            message = f'The capital of {country_obj["name"]["common"]} is {capital}'
         elif 'capital' in dic:
             response = requests.get(f'https://restcountries.com/v3.1/capital/{dic["capital"]}?fields=name,capital')
+            capital_list = response.json()
+            capital_obj = capital_list[0]
+            message = 'coming soon'
+
+
         else:
+            message = 'Invalid query parameters'
             response = {
                 'statusCode': 400,
                 'body': 'Invalid query parameters'
             }
-        message = 'Coming soon'
+        
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
