@@ -1,7 +1,8 @@
 # index.py
+import requests
 from urllib import parse
 from http.server import BaseHTTPRequestHandler
-from capital_finder import country_to_capital_handler, capital_to_country_handler
+
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -12,9 +13,9 @@ class handler(BaseHTTPRequestHandler):
 
         # Choose the appropriate handler based on the presence of 'country' or 'capital'
         if 'country' in dic:
-            response = country_to_capital_handler({'query': dic})
+            response = requests.get(f'https://restcountries.com/v3.1/name/{dic["country"]}?fields=name,capital')
         elif 'capital' in dic:
-            response = capital_to_country_handler({'query': dic})
+            response = requests.get(f'https://restcountries.com/v3.1/capital/{dic["capital"]}?fields=name,capital')
         else:
             response = {
                 'statusCode': 400,
@@ -26,3 +27,5 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(response['body'].encode('utf-8'))
         return
+
+
