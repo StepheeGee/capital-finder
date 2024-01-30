@@ -22,8 +22,8 @@ class handler(BaseHTTPRequestHandler):
             response = requests.get(f'https://restcountries.com/v3.1/capital/{dic["capital"]}?fields=name,capital')
             capital_list = response.json()
             capital_obj = capital_list[0]
-            message = 'coming soon'
-
+            country = capital_obj['name']['common']
+            message = f'{dic["capital"]} is the capital of {country}'
 
         else:
             message = 'Invalid query parameters'
