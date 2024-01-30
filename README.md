@@ -33,7 +33,7 @@ This serverless function helps you find the capital by providing the country nam
 ### Deployed URLs
 
 - **Vercel App:** [https://stephs-capital-finder.vercel.app/](https://stephs-capital-finder.vercel.app/)
-- **Capital Finder API:** [https://stephs-capital-finder.vercel.app/api/capital_finder](https://stephs-capital-finder.vercel.app/api/capital_finder)
+- **Capital Finder API:** [https://stephs-capital-finder.vercel.app/api/capital-finder](https://stephs-capital-finder.vercel.app/api/capital-finder)
 
 ### Virtual Environment Setup
 
@@ -52,4 +52,3 @@ This serverless function helps you find the capital by providing the country nam
 ### Tests
 
 No specific tests are provided for this serverless function. Feel free to create tests using your preferred testing framework.
-
